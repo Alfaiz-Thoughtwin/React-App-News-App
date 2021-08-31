@@ -18,7 +18,7 @@ export default class App extends Component {
         timeout={3000} //3 secs
         /> */}
         <NavBar/>
-        <News pageSize={5}/>
+        <News pageSize={5} country="in" category="sports"/>
       </>
     )
   }
