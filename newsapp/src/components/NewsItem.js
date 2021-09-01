@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from 'moment';
 
 export class NewsItem extends Component {
   render() {
@@ -29,7 +30,8 @@ export class NewsItem extends Component {
               <small className="text-muted">
                 By : {!author ? "Anonymous" : author}
                 <br />
-                On : {new Date(date).toGMTString()}
+                {/* On : {new Date(date).toGMTString()} */}
+                On : { moment(date).format('MMMM Do YYYY, h:mm:ss a') }
               </small>
             </p>
             <a
