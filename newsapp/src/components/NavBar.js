@@ -63,6 +63,9 @@ const NavBar = () => {
                 </Link>
               </li>
             </ul>
+            <form className="d-flex">
+              <Link className="btn btn-outline-warning" to="/login">Login</Link>
+            </form>
           </div>
         </div>
       </nav>

@@ -4,12 +4,14 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
+import Login from './components/Login';
+// import { AppContext } from "./lib/contextLib";
 
 const App = () => {
   const pageSize = 5;
   const apiKey = process.env.REACT_APP_NEWS_API
-
   const [progress, setProgress] = useState(0)
+  // const [isAuthenticating, setIsAuthenticating] = useState(true);
   
     return (
       <>
@@ -41,6 +43,11 @@ const App = () => {
             </Route>
             <Route exact path="/technology">
               <News key="technology" setProgress={setProgress} apiKey={apiKey} pageSize={pageSize} country="in" category="technology"/>
+            </Route>
+            <Route exact path="/login">
+              {/* <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}> */}
+                <Login/>
+              {/* </AppContext.Provider> */}
             </Route>
           </Switch>
         </Router>
