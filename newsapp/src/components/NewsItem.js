@@ -29,7 +29,6 @@ const NewsItem = (props) => {
               <small className="text-muted">
                 By : {!author ? "Anonymous" : author}
                 <br />
-                {/* On : {new Date(date).toGMTString()} */}
                 On : { moment(date).format('MMMM Do YYYY, h:mm:ss a') }
               </small>
             </p>

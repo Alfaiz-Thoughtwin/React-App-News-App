@@ -2,16 +2,11 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Spinner";
-// import { Auth } from 'aws-amplify';
-// import { useAppContext } from "../lib/contextLib";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [allEntry, setAllEntry] = useState([]);
-  // const { isAuthenticated, userHasAuthenticated } = useAppContext();
-  // const {isAuthenticated, userHasAuthenticated} = useContext();
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -45,36 +40,7 @@ const Login = () => {
     } catch (error) {
         alert(error.message);
     }
-    
-    
-
-    // const newEntry = {email:email, password:password};
-    // setAllEntry([...allEntry, newEntry]);
-    // console.log(allEntry)
-    // allEntry.map((curElement) => {
-    //     return (
-    //         alert(`Email : ${curElement.email}Password : ${curElement.password}`)
-    //     )
-    // })
-
-    /*
-        try {
-            // setEmail("admin@email.com");
-            // setPassword("123");
-            // await Auth.signIn(email, password);
-            // await Auth.signIn(email, password);
-            // alert("Logged in");
-            // userHasAuthenticated(true);
-
-          } catch (e) {
-            alert(e.message);
-            }
-            */
   };
-
-  // const handleLogout = () => {
-  //     userHasAuthenticated(false);
-  //   }
 
   const validateForm = () => {
     return email.length > 0 && password.length > 0;
@@ -100,7 +66,6 @@ const Login = () => {
             <div className="col-md-2"></div>
             <div className="col-md-8">
               {/* <!-- Login Form : --> */}
-              {/* {isAuthenticated ? (<button type="submit" className="btn btn-warning" onClick={handleLogout}>Logout</button>) : ( <></>)} */}
               <div className="text-center">
                 {loading && <Spinner/>}
               </div>
